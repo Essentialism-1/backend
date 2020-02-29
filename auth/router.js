@@ -8,7 +8,7 @@ const { jwtSecret } = require("../config/secrets.js");
 router.post("/register", (req, res) => {
   // implement registration
   let user = req.body;
-  const hash = bcrypt.hashSync(user.password, 8);
+  const hash = bcrypt.hashSync(user.password, 5);
   user.password = hash;
   const token = generateToken(user);
   Auth.add(user)
