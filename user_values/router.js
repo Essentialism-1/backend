@@ -20,6 +20,7 @@ router.post("/:id", (req, res) => {
         .then(values => res.status(201).json(values));  */
       db("user_values")
         .join("values", "user_values.values_id", "=", "values.id")
+        .where("user_values.user_id", req.params.id)
         .select("values.id", "values.value", "user_values.description")
         .then(vals => res.status(201).json(vals))
         .catch(({ name, message, stack, code }) => {
@@ -28,6 +29,19 @@ router.post("/:id", (req, res) => {
           res.status(500).json({ name, message, stack, code });
         });
     })
+    .catch(({ name, message, stack, code }) => {
+      console.log({ name, message, stack, code });
+
+      res.status(500).json({ name, message, stack, code });
+    });
+});
+
+router.get("/:id", (req, res) => {
+  db("user_values")
+    .join("values", "user_values.values_id", "=", "values.id")
+    .where("user_values.user_id", req.params.id)
+    .select("values.id", "values.value", "user_values.description")
+    .then(vals => res.status(201).json(vals))
     .catch(({ name, message, stack, code }) => {
       console.log({ name, message, stack, code });
 
