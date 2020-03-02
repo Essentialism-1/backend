@@ -5,7 +5,8 @@ module.exports = {
   find,
   findBy,
   findById,
-  getAllByUser
+  getAllByUser,
+  editProject
 };
 
 function find() {
@@ -50,4 +51,14 @@ function findById(id) {
   return db("projects")
     .where({ id })
     .first();
+}
+
+function editProject(project_id, project_update) {
+  return db("projects")
+    .where({ id: project_id })
+    .update(project_update)
+    .returning("id")
+    .then(id => {
+      return findById(id[0]);
+    });
 }

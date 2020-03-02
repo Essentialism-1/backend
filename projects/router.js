@@ -21,4 +21,15 @@ router.get("/user/:id", (req, res) => {
     });
 });
 
+router.put("/:id", (req, res) => {
+  const id = req.params.id;
+  Projects.editProject(id, req.body)
+    .then(project => {
+      return res.json({ message: "project successfully updated", project });
+    })
+    .catch(({ name, message, stack, code }) => {
+      res.status(500).json({ name, message, stack, code });
+    });
+});
+
 module.exports = router;
