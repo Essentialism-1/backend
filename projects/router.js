@@ -32,4 +32,15 @@ router.put("/:id", (req, res) => {
     });
 });
 
+router.delete("/:id", (req, res) => {
+  const id = req.params.id;
+  Projects.deleteProject(id)
+    .then(() => {
+      res.status(200).json({ message: "project deleted successfully" });
+    })
+    .catch(({ name, message, stack, code }) => {
+      res.status(500).json({ name, message, stack, code });
+    });
+});
+
 module.exports = router;
