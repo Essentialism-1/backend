@@ -8,6 +8,7 @@ const restricted = require("../auth/restricted.js");
 const authRouter = require("../auth/router.js");
 const valuesRouter = require("../values/router.js");
 const user_valuesRouter = require("../user_values/router.js");
+const projectsRouter = require("../projects/router.js");
 
 const server = express();
 
@@ -18,6 +19,7 @@ server.use(helmet());
 server.use("/api/auth", authRouter);
 server.use("/api/values", restricted, valuesRouter);
 server.use("/api/user_values", restricted, user_valuesRouter);
+server.use("/api/projects", restricted, projectsRouter);
 
 server.get("/", (req, res) => {
   res.send("It's alive!");
