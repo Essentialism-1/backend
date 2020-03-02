@@ -25,8 +25,8 @@ router.post("/register", (req, res) => {
 
 router.post("/login", (req, res) => {
   // implement login
-  let { username, password } = req.body;
-  Auth.findBy({ username })
+  let { email, password } = req.body;
+  Auth.findBy({ email })
     .first()
     .then(user => {
       if (user && bcrypt.compareSync(password, user.password)) {

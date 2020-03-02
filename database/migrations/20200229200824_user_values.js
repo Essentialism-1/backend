@@ -1,5 +1,7 @@
 exports.up = function(knex) {
   return knex.schema.createTable("user_values", user_values => {
+    user_values.increments();
+
     user_values
       .integer("user_id")
       .unsigned()
@@ -16,7 +18,7 @@ exports.up = function(knex) {
 
     user_values.text("description");
 
-    user_values.primary(["user_id", "values_id"]);
+    user_values.integer("user_values_id").unique();
   });
 };
 
