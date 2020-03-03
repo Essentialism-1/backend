@@ -24,6 +24,7 @@ _https://essentialism-pg-be.herokuapp.com/_
 ```
 
 > those endpoints return the JWT.
+
 > the JWT is required to access all other endpoints
 
 ### GET to _/api/values_
