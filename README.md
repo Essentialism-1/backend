@@ -1,8 +1,8 @@
 # Essentialism API Documentation
 
-## here is the base url:
+### here is the base url:
 
-_https://essentialism-pg-be.herokuapp.com/_
+- _https://essentialism-pg-be.herokuapp.com/_
 
 ### POST to _/api/auth/register_ expects:
 
