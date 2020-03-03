@@ -60,4 +60,43 @@ expects:
 
 ### GET to _/api/user_values/:id_
 
+> id must be the user id
+
 > returns list of values pertaining to a user, user must have created values first
+
+### GET to _/api/projects/user/:id_
+
+> id must be the user id
+
+> returns list of projects pertaining to that user with
+
+### POST to _/api/projects_
+
+expects:
+
+```json
+{
+  "title": "CREATIVTY todo",
+  "body": "A CREATIVE TODO BODY",
+  "user_values_id": "1"
+}
+```
+
+> user_values_id pertains to the value the todo will be attached to
+
+### PUT to _/api/projects/:id_
+
+> id must be the project_id
+
+expects:
+
+```json
+{
+  "title": "CREATIVTY todo",
+  "body": "A CREATIVE TODO BODY"
+}
+```
+
+### DELETE to _/api/projects/:id_
+
+> id must be the project_id
