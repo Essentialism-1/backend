@@ -1,26 +1,33 @@
 # Essentialism API Documentation
 
-Essentialism backend
-
 ## here is the base url:
 
 _https://essentialism-pg-be.herokuapp.com/_
 
-## POST to _/api/auth/register expects:_
+### POST to _/api/auth/register_ expects:
 
+```
 {
 "email": "email",
 "password": "password",
 "name": "<OPTIONAL>"
 }
-POST to /api/auth/login expects:
+```
+
+### POST to _/api/auth/login_ expects:
+
+```
 {
 "email": "email",
 "password": "password"
 }
-those endpoints return the JWT.
-the JWT is required to access all other endpoints
-GET to /api/values
+```
+
+> those endpoints return the JWT.
+> the JWT is required to access all other endpoints
+
+### GET to _/api/values_
+
 returns a list of values
 POST to /api/user_values/:id
 \*\*id must be the user id
