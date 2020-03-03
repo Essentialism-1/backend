@@ -26,7 +26,12 @@ function findBy(filter) {
 
 function getAllByUser(user_id) {
   return db("projects")
-    .join("user_values", "projects.user_values_id", "=", "user_values.id")
+    .join(
+      "user_values",
+      "projects.user_values_id",
+      "=",
+      "user_values.values_id"
+    )
     .select(
       "projects.id",
       "projects.user_values_id",
