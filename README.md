@@ -82,7 +82,7 @@ expects:
 }
 ```
 
-> user_values_id pertains to the value the todo will be attached to
+> user_values_id pertains to the values_id of the value the project will be attached to
 
 ### PUT to _/api/projects/:id_
 
