@@ -17,7 +17,7 @@ module.exports = {
 
   testing: {
     client: "pg",
-    connection: "postgresql://localhost/essentialism",
+    connection: "postgresql://localhost/testing",
     pool: {
       min: 2,
       max: 10
