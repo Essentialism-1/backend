@@ -4,12 +4,13 @@ const { jwtSecret } = require("../config/secrets.js");
 
 module.exports = (req, res, next) => {
   const { authorization } = req.headers;
-
+  console.log(req.headers);
   if (authorization) {
     jwt.verify(authorization, jwtSecret, (err, decodedToken) => {
       if (err) {
         res.status(401).json({ message: "Invalid Credentials" });
       } else {
+        console.log(decodedToken);
         req.decodedToken = decodedToken;
 
         next();
