@@ -21,6 +21,7 @@ router.post("/:id", (req, res) => {
         .join("values", "user_values.values_id", "=", "values.id")
         .where("user_values.user_id", req.params.id)
         .select(
+          "user_values.id",
           "user_values.values_id",
           "values.value",
           "user_values.description"
