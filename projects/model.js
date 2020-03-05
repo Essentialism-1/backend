@@ -30,7 +30,7 @@ function getAllByUser(user_id) {
       "user_values",
       "projects.user_values_id",
       "=",
-      "user_values.values_id"
+      "user_values.id"
     )
     .select(
       "projects.id",
